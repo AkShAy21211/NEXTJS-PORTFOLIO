@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "./providers";
@@ -15,18 +15,22 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const tidioScript = process.env.TIDIO
-
-
+const tidioScript = process.env.TIDIO;
 
 export default function RootLayout({ children }) {
-
-   useEffect(() => {
-    const tidioScript = document.createElement('script');
-    tidioScript.src = tidioScript; // Replace with your Tidio script
-    tidioScript.async = true;
-    document.body.appendChild(tidioScript);
+  useEffect(() => {
+    if (tidioScript) {
+      const script = document.createElement("script");
+      script.src = tidioScript;
+      script.async = true;
+      document.body.appendChild(script);
+      console.log(script);
+      
+    } else {
+      console.error("Tidio script URL is not defined.");
+    }
   }, []);
+
   return (
     <html lang="en">
       <body
