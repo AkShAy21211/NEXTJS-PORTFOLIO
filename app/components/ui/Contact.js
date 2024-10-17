@@ -17,29 +17,45 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, message }),
-    });
 
-    if (res.ok) {
-      alert("sent");
-      setName("");
-      setEmail("");
-      setMessage("");
-      setSuccess(true);
-    } else {
-      console.error("Error sending email");
-      setSuccess(false);
+    if (validate()) {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (res.ok) {
+        alert("sent");
+        setName("");
+        setEmail("");
+        setMessage("");
+        setSuccess(true);
+      } else {
+        console.error("Error sending email");
+        setSuccess(false);
+      }
     }
   };
 
+  const validate = () => {
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setError("Please fill all fields");
+      return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
+      return false;
+    }
+    return true;
+  };
   return (
     <Box p={5} borderRadius="md" boxShadow="lg" mt={10} id="contact">
       <Heading as="h2" size="xl" mb={4} color="white" textAlign="start">
@@ -53,7 +69,7 @@ const Contact = () => {
           onChange={(e) => setName(e.target.value)}
           placeholder="Your Name"
           value={name}
-          required
+          required={true}
           variant="outline"
           color="white"
         />
@@ -62,14 +78,14 @@ const Contact = () => {
           placeholder="Your Email"
           variant="outline"
           value={email}
-          required
+          required={true}
           color="white"
         />
         <Textarea
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Your Message"
           variant="outline"
-          required
+          required={true}
           value={message}
           color="white"
         />
@@ -87,6 +103,11 @@ const Contact = () => {
         {success && (
           <Text color="green.500" mb={2}>
             Message sent successfully!
+          </Text>
+        )}
+        {error && (
+          <Text color="red.500" mb={2}>
+            {error}
           </Text>
         )}
       </VStack>
