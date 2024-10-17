@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       script.src = tidioScript; // The correct script URL
       script.async = true;
       document.body.appendChild(script);
-      console.log("Tidio script loaded:", script);
+      console.log("Tidio script loaded:");
     } else {
       console.error("Tidio script URL is not defined.");
     }
