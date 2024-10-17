@@ -15,6 +15,7 @@ import githubaction from "../../public/images/gitaction.png";
 import mongodb from "../../public/images/mongodb.png";
 import sql from "../../public/images/sql.png";
 import docker from "../../public/images/docker.png";
+import socketio from "../../public/images/socket.png";
 import figma from "../../public/images/figma.png";
 import firebase from "../../public/images/firebase.png";
 import postman from "../../public/images/postman.png";
@@ -34,7 +35,7 @@ const skillsData = [
   { title: "Express.js", image: express },
   { title: "MongoDB", image: mongodb },
   { title: "SQL", image: sql },
-  { title: "Socket.io", image: postman }, // Change to your image path
+  { title: "Socket.io", image: socketio }, // Update with the correct path
   { title: "Docker", image: docker },
   { title: "GitHub", image: github }, // Change to your image path
   { title: "GitHub Actions", image: githubaction }, // Change to your image path

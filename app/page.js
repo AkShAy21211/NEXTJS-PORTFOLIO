@@ -16,17 +16,18 @@ export default function Home() {
         <div className="intro flex flex-col md:flex-row  justify-around  items-center">
           <Intro />
           <Image
+            alt="Hero Image"
             width={250}
             height={250}
             quality={75}
             src={Hero}
           />
         </div>
-        <Services/>
-        <Skills/>
-        <Projects/>
-        <Education/>
-        <Contact/>
+        <Services />
+        <Skills />
+        <Projects />
+        <Education />
+        <Contact />
       </div>
     </main>
   );
