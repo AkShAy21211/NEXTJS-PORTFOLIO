@@ -16,6 +16,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,10 +30,16 @@ const Contact = () => {
 
     if (res.ok) {
       alert("sent");
+      setName("");
+      setEmail("");
+      setMessage("");
+      setSuccess(true);
     } else {
       console.error("Error sending email");
+      setSuccess(false);
     }
   };
+
   return (
     <Box p={5} borderRadius="md" boxShadow="lg" mt={10} id="contact">
       <Heading as="h2" size="xl" mb={4} color="white" textAlign="start">
@@ -46,6 +53,7 @@ const Contact = () => {
           onChange={(e) => setName(e.target.value)}
           placeholder="Your Name"
           value={name}
+          required
           variant="outline"
           color="white"
         />
@@ -54,12 +62,14 @@ const Contact = () => {
           placeholder="Your Email"
           variant="outline"
           value={email}
+          required
           color="white"
         />
         <Textarea
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Your Message"
           variant="outline"
+          required
           value={message}
           color="white"
         />
@@ -74,6 +84,11 @@ const Contact = () => {
         >
           Send Message
         </Button>
+        {success && (
+          <Text color="green.500" mb={2}>
+            Message sent successfully!
+          </Text>
+        )}
       </VStack>
       <Box mt={6} className="space-y-3">
         <Text color="gray.400" mb={2}>
