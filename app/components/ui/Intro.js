@@ -1,7 +1,8 @@
-import React from "react";
+"use client"
 import Button from "./Button";
-
 const Intro = () => {
+
+
   return (
     <div className="flex flex-col items-start justify-center">
       <h1 className="text-2xl font-bold mb-4">
@@ -20,8 +21,8 @@ const Intro = () => {
         together!
       </p>
       <div className="flex gap-5 justify-start w-full md:max-w-4xl">
-        <Button label={"Contact Me"} />
-        <Button label={"Download Resume"} />
+        <Button link={"contact"} label={"Contact Me"} />
+        <Button link={'https://drive.google.com/file/d/1fMB3yeZGT5j9LllsC4Uw16kpMB2SLxWs/view?usp=drive_link'} label={"Download Resume"} />
       </div>
     </div>
   );
