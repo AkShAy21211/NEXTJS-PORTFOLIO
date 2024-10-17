@@ -8,7 +8,7 @@ const Intro = () => {
       <h1 className="text-2xl font-bold mb-4">
         Hi, I&apos;m{" "}
         <span className="text-4xl md:text-7xl bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-400 bg-clip-text text-transparent hover:text-white">
-          AKSHAY
+           AKSHAY P
         </span>
         <br />
         <span className="text-4xl md:text-7xl hover:bg-gradient-to-r hover:from-purple-600 hover:via-purple-500 hover:to-indigo-400 hover:text-transparent hover:bg-clip-text">
