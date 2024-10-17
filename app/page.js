@@ -10,6 +10,10 @@ import Contact from "./components/ui/Contact";
 import Experience from "./components/ui/Experience";
 import Footer from "./components/layout/Footer";
 
+export const metadata = {
+  title: "AKSHAY P",
+};
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col select-none">

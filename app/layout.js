@@ -18,7 +18,6 @@ const geistMono = localFont({
 // Accessing environment variable with the correct prefix
 const tidioScript = process.env.NEXT_PUBLIC_TIDIO; // Ensure you have defined this in your .env file
 
-console.log(tidioScript);
 
 export default function RootLayout({ children }) {
   useEffect(() => {
