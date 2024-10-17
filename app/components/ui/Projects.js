@@ -72,7 +72,7 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <Box p={5} borderRadius="md" boxShadow="lg" mt={10}>
+    <Box p={5} borderRadius="md" boxShadow="lg" mt={10} id="projects">
       <Heading as="h2" size="xl" mb={4} color="white" textAlign="start">
         Projects
       </Heading>
@@ -107,7 +107,6 @@ const Projects = () => {
             ) : (
               <Box
                 height="200px"
-                width="400px"
                 bg="gray.700"
                 display="flex"
                 alignItems="center"

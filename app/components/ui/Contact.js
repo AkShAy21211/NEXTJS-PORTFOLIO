@@ -28,13 +28,13 @@ const Contact = () => {
     });
 
     if (res.ok) {
-     alert("sent")
+      alert("sent");
     } else {
       console.error("Error sending email");
     }
   };
   return (
-    <Box p={5} borderRadius="md" boxShadow="lg" mt={10}>
+    <Box p={5} borderRadius="md" boxShadow="lg" mt={10} id="contact">
       <Heading as="h2" size="xl" mb={4} color="white" textAlign="start">
         Contact Me
       </Heading>
@@ -75,14 +75,14 @@ const Contact = () => {
           Send Message
         </Button>
       </VStack>
-      <Box mt={6}>
+      <Box mt={6} className="space-y-3">
         <Text color="gray.400" mb={2}>
           You can also reach me through:
         </Text>
-        <Text color="white" mb={1}>
+        <Text color="white" className="flex gap-3  items-center" mb={1}>
           <FaEnvelope /> akshay68580@gmail.com
         </Text>
-        <Text color="white">
+        <Text className="flex gap-3  items-center" color="white">
           <FaPhone /> +91 9074592275
         </Text>
       </Box>

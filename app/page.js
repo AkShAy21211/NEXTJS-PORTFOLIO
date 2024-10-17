@@ -7,6 +7,8 @@ import Skills from "./components/ui/Skills";
 import Projects from "./components/ui/Projects";
 import Education from "./components/ui/Education";
 import Contact from "./components/ui/Contact";
+import Experience from "./components/ui/Experience";
+import Footer from "./components/layout/Footer";
 
 export default function Home() {
   return (
@@ -26,9 +28,11 @@ export default function Home() {
         <Services />
         <Skills />
         <Projects />
+        <Experience/>
         <Education />
         <Contact />
       </div>
+      <Footer/>
     </main>
   );
 }

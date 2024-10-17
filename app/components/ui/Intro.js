@@ -4,7 +4,7 @@ const Intro = () => {
 
 
   return (
-    <div className="flex flex-col items-start justify-center">
+    <div className="flex flex-col items-start justify-center" id="about">
       <h1 className="text-2xl font-bold mb-4">
         Hi, I&apos;m{" "}
         <span className="text-4xl md:text-7xl bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-400 bg-clip-text text-transparent hover:text-white">
@@ -21,7 +21,7 @@ const Intro = () => {
         together!
       </p>
       <div className="flex gap-5 justify-start w-full md:max-w-4xl">
-        <Button link={"contact"} label={"Contact Me"} />
+        <Button link={"#contact"} label={"Contact Me"} />
         <Button link={'https://drive.google.com/file/d/1fMB3yeZGT5j9LllsC4Uw16kpMB2SLxWs/view?usp=drive_link'} label={"Download Resume"} />
       </div>
     </div>
