@@ -7,7 +7,6 @@ import pollara from "../../public/images/pollara.png";
 import chat from "../../public/images/chat.png";
 import netflix from "../../public/images/netflix.png";
 import weather from "../../public/images/weather.png";
-import crud from "../../public/images/crud.png";
 import { FaEye, FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
