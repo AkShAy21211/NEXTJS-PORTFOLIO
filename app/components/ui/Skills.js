@@ -44,18 +44,16 @@ const skillsData = [
   { title: "Figma", image: figma },
   { title: "Postman", image: postman },
 ];
-
 const Skills = () => {
   return (
     <Box p={5} borderRadius="md" boxShadow="lg" mt={10}>
       <Heading as="h2" size="xl" mb={2} color="white" textAlign="start">
-        Technologies I'm Passionate About
+        Technologies I&apos;m Passionate About
       </Heading>
       <Text color="gray.400" mb={4} fontSize="lg">
         Continuously upskilling and exploring new technologies to enhance my
         skill set.
       </Text>
-  
 
       <Grid
         templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
